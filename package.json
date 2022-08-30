@@ -9,35 +9,35 @@
     "cypress:open": "cypress open",
     "test:local": "cross-env CYPRESS_ENV=localhost npm run test",
     "test:prod": "cross-env CYPRESS_ENV=production npm run test",
-    "test": "cypress run --spec 'cypress/integration/**/*.feature'",
+    "test": "cypress run --spec 'cypress/e2e/**/*.feature'",
     "test:debug:local": "cross-env CYPRESS_ENV=localhost npm run test:debug",
     "test:debug:prod": "cross-env CYPRESS_ENV=production npm run test:debug",
-    "test:debug": "cypress run --headed --browser chrome --spec 'cypress/integration/**/*.feature'",
-    "test:pull-features": "git submodule update --remote gherkin-features && copyfiles \"gherkin-features/*\" cypress/integration && ts-node ./scripts/remove-old-features.js"
+    "test:debug": "cypress run --headed --browser chrome --spec 'cypress/e2e/**/*.feature'",
+    "test:pull-features": "git submodule update --remote gherkin-features && copyfiles \"gherkin-features/*\" cypress/e2e && ts-node ./scripts/remove-old-features.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@cypress/browserify-preprocessor": "^3.0.1",
-    "@types/cypress-cucumber-preprocessor": "^4.0.0",
-    "@types/fs-extra": "^9.0.11",
-    "@types/glob": "^7.1.3",
-    "@types/resolve": "^1.20.0",
+    "@badeball/cypress-cucumber-preprocessor": "^12.1.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
+    "@types/fs-extra": "^9.0.13",
+    "@types/glob": "^7.2.0",
+    "@types/resolve": "^1.20.2",
     "copyfiles": "^2.4.1",
     "cross-env": "^7.0.3",
-    "cypress": "7.2.0",
-    "cypress-cucumber-preprocessor": "^4.1.0",
+    "cypress": "10.6.0",
+    "esbuild": "^0.14.23",
     "fs-extra": "^9.1.0",
     "glob": "^7.1.6",
     "resolve": "^1.20.0",
     "typescript": "^4.2.4"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.22.0",
-    "eslint": "^7.25.0",
-    "eslint-config-prettier": "^8.3.0",
-    "prettier": "^2.2.1"
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.7.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true

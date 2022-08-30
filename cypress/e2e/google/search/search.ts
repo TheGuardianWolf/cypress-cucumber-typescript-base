@@ -1,13 +1,12 @@
-import { Given, Then, When } from 'cypress-cucumber-preprocessor/steps';
-
-import SearchPage from '../../../pages/google/search-page';
-import SearchResultsPage from '../../../pages/google/search-results-page';
+import { Given, Then, When } from '@badeball/cypress-cucumber-preprocessor';
+import SearchPage from '~/pages/google/search-page';
+import SearchResultsPage from '~/pages/google/search-results-page';
 
 Given(`I'm at the search page`, () => {
   SearchPage.visit();
 });
 
-When(`I type {string} in search`, (searchTerm) => {
+When(`I type {string} in search`, (searchTerm: string) => {
   SearchPage.search(searchTerm);
 });
 
