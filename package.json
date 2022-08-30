@@ -13,7 +13,7 @@
     "test:debug:local": "cross-env CYPRESS_ENV=localhost npm run test:debug",
     "test:debug:prod": "cross-env CYPRESS_ENV=production npm run test:debug",
     "test:debug": "cypress run --headed --browser chrome --spec 'cypress/e2e/**/*.feature'",
-    "test:pull-features": "git submodule update --remote gherkin-features && copyfiles \"gherkin-features/*\" cypress/e2e && ts-node ./scripts/remove-old-features.js"
+    "test:pull-features": "git submodule update --remote gherkin-features && copyfiles \"gherkin-features/*\" cypress/e2e && ts-node ./scripts/remove-old-features.ts"
   },
   "author": "",
   "license": "ISC",

@@ -2,7 +2,7 @@ import fs from 'fs';
 
 import glob from 'glob';
 
-const CYPRESS_DIR = 'cypress/integration';
+const CYPRESS_DIR = 'cypress/e2e';
 const GHERKIN_DIR = 'gherkin-features';
 
 const getDirectories = (src: string, callback: Parameters<typeof glob>[2]) => {
